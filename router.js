@@ -19,7 +19,7 @@ router.post("/send-email" , async (req, res) => {
     const { data, error } = await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
         to: ["agu.musumeci@gmail.com"],
-        subject: "Message from your Portfolio...",
+        subject: "New Portfolio Message!",
         html: `
         <body style="padding:20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background-color: pink;">
                 <article>
