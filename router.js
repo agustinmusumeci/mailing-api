@@ -39,9 +39,6 @@ router.post("/send-email" , async (req, res) => {
                         ${body.message}
                     </p>
                 </article>
-
-                <br />
-            </main>
         </body>
         `
     }) 
