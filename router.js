@@ -14,7 +14,10 @@ router.get("/", (req, res) => {
 
 // Email send route
 router.post("/send-email" , async (req, res) => {
-    const { body } = req;
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+
+    const { name, email, message } = req.body;
 
     const { data, error } = await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
@@ -26,17 +29,17 @@ router.post("/send-email" , async (req, res) => {
                     <h3 style="font-weight: 500;">New Portfolio message from:</h3>
                     <p style="margin-top: -10px; color:#222222; font-weight:400;">
                         <span style="font-weight:500;">Name:</span> 
-                        ${body.name}
+                        ${name}
                     </p>
 
                     <p style="margin-top: -10px; color:#222222; font-weight:400;">
                         <span style="font-weight:500;">Email:</span> 
-                        ${body.email}
+                        ${email}
                     </p>
 
                     <p style="margin-top: -10px; color:#222222; font-weight:400;">
                         <span style="font-weight:500;">Message:</span>
-                        ${body.message}
+                        ${message}
                     </p>
                 </article>
         </body>
