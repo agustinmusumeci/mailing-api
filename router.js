@@ -23,7 +23,7 @@ router.post("/send-email" , async (req, res) => {
         html: `
         <body style="padding:20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background-color: pink;">
                 <article>
-                    <h3 style="font-weight: 500;">New message from Portfolio from:</h3>
+                    <h3 style="font-weight: 500;">New Portfolio message from:</h3>
                     <p style="margin-top: -10px; color:#222222; font-weight:400;">
                         <span style="font-weight:500;">Name:</span> 
                         ${body.name}
